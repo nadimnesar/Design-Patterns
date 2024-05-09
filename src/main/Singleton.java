@@ -61,9 +61,16 @@ class LazySingleton {
     }
 }
 
+/*
+Eager initialization is generally considered thread-safe in standard Java environments, it's essential to be cautious
+in advanced scenarios involving custom class loaders or exception handling to ensure the singleton pattern's
+correctness.
+*/
+
 //Eager initialization approach of singleton design pattern
 class EagerSingleton {
-    // Create the instance of the class during class loading
+    // Create the instance of the class during class loading.
+    // Static initialization in Java is thread-safe by default.
     private static EagerSingleton instance = new EagerSingleton();
 
     // Private constructor to prevent instantiation outside this class
